@@ -33,14 +33,12 @@
 }
 
 .sidebar {
-  margin-top: 95px;
   z-index: 1;
   position: fixed;
 }
 
 .content {
-  margin-top: 65px;
-  z-Index: 1;
+  margin-top: 20px;
 }
 
 .query-bar {
