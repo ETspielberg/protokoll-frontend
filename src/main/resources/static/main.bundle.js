@@ -781,23 +781,25 @@ var AnalyzerService = (function () {
         this.statistics = new Map();
         this.eventanalysiss = new Map();
         var stocks = plotData['stock'];
-        var requests = plotData['requests'];
-        var oldDate = new Date(stocks[0][0]);
-        var year;
-        if (typeof requests !== 'undefined') {
-            var oldRequestsDate = new Date(requests[0][0]);
-            year = Math.min(oldDate.getFullYear(), oldRequestsDate.getFullYear());
-        }
-        else {
-            year = Math.min(oldDate.getFullYear());
-        }
-        var actualYear = new Date().getFullYear();
-        while (year <= actualYear) {
-            this.statistics.set(year, new __WEBPACK_IMPORTED_MODULE_2__model_Statistics__["a" /* Statistics */](year, 0, 0, 0, 0, 0, 0));
-            if (actualYear - year > 0 && actualYear - year <= 10) {
-                this.eventanalysiss.set(actualYear - year, new __WEBPACK_IMPORTED_MODULE_1__model_Eventanalysis__["a" /* Eventanalysis */](year, 0, 0, 0));
+        if (typeof stocks !== 'undefined') {
+            var requests = plotData['requests'];
+            var oldDate = new Date(stocks[0][0]);
+            var year = void 0;
+            if (typeof requests !== 'undefined') {
+                var oldRequestsDate = new Date(requests[0][0]);
+                year = Math.min(oldDate.getFullYear(), oldRequestsDate.getFullYear());
             }
-            year++;
+            else {
+                year = Math.min(oldDate.getFullYear());
+            }
+            var actualYear = new Date().getFullYear();
+            while (year <= actualYear) {
+                this.statistics.set(year, new __WEBPACK_IMPORTED_MODULE_2__model_Statistics__["a" /* Statistics */](year, 0, 0, 0, 0, 0, 0));
+                if (actualYear - year > 0 && actualYear - year <= 10) {
+                    this.eventanalysiss.set(actualYear - year, new __WEBPACK_IMPORTED_MODULE_1__model_Eventanalysis__["a" /* Eventanalysis */](year, 0, 0, 0));
+                }
+                year++;
+            }
         }
     };
     AnalyzerService.prototype.getStatistics = function () {
