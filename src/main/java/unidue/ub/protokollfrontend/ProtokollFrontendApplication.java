@@ -21,9 +21,8 @@ public class ProtokollFrontendApplication {
 
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
-			http.httpBasic()
-					.and()
-					.authorizeRequests().anyRequest().permitAll()
+			http.httpBasic().disable();
+			http.authorizeRequests().anyRequest().permitAll()
 					.and()
 					.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
 		}
