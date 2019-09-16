@@ -1,0 +1,11 @@
+{
+  "name": "fachref",
+  "roles": [
+    "ROLE_ANALYST",
+    "ROLE_ADMIN",
+    "ROLE_FACHREFERENT",
+    "ROLE_MEDIA"
+  ],
+  "fullname": "Eike T. Spielberg",
+  "email": "eike.spielberg@uni-due.de"
+}
